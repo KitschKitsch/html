@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			div{width: 300px; height: 300px; background: blue;
+				transition-property: all;/* 변형시킬 속성들(all 전부다!) */
+				transition-duration: 2s;}/* 변형 시간 */
+			div:hover{width: 400px; height: 420px; background: red;}	
+			
+		
+			.ltop:hover{border:1px solid black; margin:50px auto;
+		 			    width:500px; height:658px;}
+			.r:hover{transform:skewX(10deg); transform-origin: left top;}
+			
+			.r2{width: 559px; height: 373px;
+				transition-property: width, height;
+				transition-duration: 2s;}
+			.r2:hover{width: 120%; height: 120%;}
+			
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div class="origin">
+			<div class="ltop">
+				<img class="r" src="images/ma1.jpg">
+			</div>
+			<div class="ltop">
+				<img class="r2" src="images/ma2.jpg">
+			</div>
+	</body>
+</html>

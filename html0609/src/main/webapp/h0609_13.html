@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"><!-- 반응형 설정! -->
+		<title>flex</title>
+		<style>
+			* {margin: 0; padding: 0;}
+			#main{width: 1000px; height: 300px; border: 1px solid black; margin: 50px auto;
+				  display: flex; flex-direction: row;/* column-reverse 등등 */
+				  flex-wrap: no-wrap;/* 한줄로 vs 줄바꿔서 */
+				  justify-content: space-between;/* 좌우정렬 */
+				  align-items: stretch;/* 위아래정렬 */
+				  }
+			
+			div{width: 300px; height: 150px; border: 1px solid blue; font-size: 50px; text-align: center;}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+	</body>
+</html>
