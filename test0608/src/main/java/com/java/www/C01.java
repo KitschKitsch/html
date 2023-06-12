@@ -16,7 +16,7 @@ public class C01 extends HttpServlet {
 	protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doAction");
 		request.setCharacterEncoding("utf-8");// 한글데이터 전달받을 시 인코딩
-		response.setContentType("text/html; charset=utf-8");
+		response.setContentType("text/html; charset=utf-8");// post방식에서만 사용되는 인코딩
 		PrintWriter writer = response.getWriter();
 		writer.println("<html>");
 		writer.println("<head><title>jsp 페이지</title></head>");
