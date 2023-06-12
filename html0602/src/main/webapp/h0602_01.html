@@ -2,19 +2,19 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>네이버</title>
+		<title>table</title>
 		<style>
-			table,th,td{border: 1px solid black; border-collapse: collapse;} /*테이블의 thdhk td에 두꺼운 줄긋기*/ /*선사이 간격 없애기*/
+			table,th,td{border: 1px solid black; border-collapse: collapse;} /*테이블의 thdhk td에 두꺼운 줄긋기, 선사이 간격 없애기*/
 			td{width:150px;} /*셀크기*/
 		</style>
 	</head>
 	<body>
 		<table> <!-- 주석 단축키: Ctrl + Shift + / -->
 			<tr>
-				<th colspan="2">1행1열</th> <td>1행3열</td> <td>1행4열</td>
+				<th colspan="2">1행1열+2열</th> <td>1행3열</td> <td>1행4열</td>
 			</tr>
 			<tr>
-				<td>2행1열</td> <td colspan="3">2행2열</td>
+				<td>2행1열</td> <td colspan="3">2행2열+3열+4열</td>
 			</tr>
 			<tr>
 				<td>3행1열</td> <td>3행2열</td> <td>3행3열</td> <td>3행4열</td>
@@ -23,13 +23,13 @@
 		<hr>	
 		<table>
 			<tr>
-				<th>구분</th> <th colspan="3">1행2열</th> <td>1행5열</td>
+				<th>구분</th> <th colspan="3">1행2열+3열+4열</th> <td>1행5열</td>
 			</tr>
 			<tr>
 				<td>2행1열</td> <td>2행2열</td> <td>2행3열</td> <td>2행4열</td> <td>2행5열</td>
 			</tr>
 			<tr>
-				<td colspan="4">3행1열</td> <td>3행5열</td>
+				<td colspan="4">3행1열+2열+3열+4열</td> <td>3행5열</td>
 			</tr>
 			<tr>
 				<td>4행1열</td> <td>4행2열</td> <td>4행3열</td> <td>4행4열</td> <td>4행5열</td>
