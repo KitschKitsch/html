@@ -26,7 +26,7 @@ public class BoardFrm extends HttpServlet {
 		
 		// response: 응답하기
 		response.setContentType("text/html; charset=utf-8");// html, utf-8로 보내기
-		PrintWriter writer = response.getWriter();// writer 불러오기
+		PrintWriter writer = response.getWriter();// 문자응답을 위한 출력스트림
 		writer.println("<html>");
 		writer.println("<head><title>게시판</title><head>");
 		writer.println("<body>");

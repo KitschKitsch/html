@@ -29,14 +29,13 @@ public class BirthConfirm extends HttpServlet {
 		
 		String content = "";
 		if(age>=18) {
-			
 			content="<h2 style='color:blue; font-weight:600;'>주류 판매 가능<h2>";
 		} else {
 			content="<h2 style='color:red; font-weight:600;'>미성년자: 주류 판매 금지<h2>";
 		}
 		
 		response.setContentType("text/html; charset=utf-8");
-		PrintWriter writer = response.getWriter();
+		PrintWriter writer = response.getWriter();// 문자응답을 위한 출력스트림
 		writer.println("<html>");
 		writer.println("<head><title>미성년자 확인</title></head>");
 		writer.println("<body>");

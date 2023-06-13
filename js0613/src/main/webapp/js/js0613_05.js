@@ -4,8 +4,6 @@
 var count=0;
 var interval;
 
-
-
 //setInterval 추가
 function setIn(){
 	var htmlData = "";
@@ -17,9 +15,9 @@ function setIn(){
 
 	//var data =  document.getElementById("t01").innerHTML = htmlData;
 	//var data =  document.getElementById("t01").innerText = htmlData;
-	$("#t01").append(htmlData);
+	$("#t01").append(htmlData);// 제이쿼리문 $("아이디")
 
-	interval = setInterval(function(){
+	interval = setInterval(function(){// interval 함수 생성
 		count += 1;
 		console.log("숫자 : ",count);
 	},1000); //   1/1000초 1000=1초
@@ -28,5 +26,5 @@ function setIn(){
 //setInterval 삭제
 function setOut(){
 	console.log("멈춤");
-	clearInterval(interval);
+	clearInterval(interval); // interval함수 삭제
 }

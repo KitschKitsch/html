@@ -17,6 +17,10 @@ function start() {
 		if (seconds<10) seconds = "0"+seconds;
 		var milliseconds = today.getMilliseconds();
 		document.getElementById("h01").innerText = hours +":"+ minutes +":"+ seconds; 
-	},1000);
-	
+		},1000);
+}
+		
+function stop(){
+	console.log("멈춤");
+	clearInterval(interval); // interval함수 삭제
 }

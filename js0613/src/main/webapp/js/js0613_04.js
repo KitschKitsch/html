@@ -12,6 +12,7 @@ function dbIdCheck() {
 }
 
 function idConfirm() {
+	// 열려있는 창의 id값에 // 현재창의 checkId값을 넣음
 	opener.document.getElementById("id").value = document.getElementById("checkId").value;	
 	window.close();
 }
