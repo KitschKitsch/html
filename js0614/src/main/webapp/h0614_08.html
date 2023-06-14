@@ -15,7 +15,7 @@
 		</style>
 		<script>
 			$(function(){// 제이쿼리문
-				$("#jsonBtn").click(function(){
+				$("#jsonBtn").click(function(){// jsonBtn위치 클릭하면
 				//alert("실행");
 					$.ajax({// ajax구문
 						url: "js/student.json",// 전송할 페이지
@@ -26,7 +26,7 @@
 							alert("데이터를 가져옵니다.");
 							console.log(data);
 							
-							// 데잉터 불러오기
+							// 데이터 불러오기
 							/* ---------------------------- */
 							let htmlData = "";
 							for (let i=0; i<data.length; i++) {

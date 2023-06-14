@@ -16,9 +16,9 @@
 				
 				$("#writeBtn").click(function(){// writeBtn위치 누르면
 					let no = $("#no").val(); // = document.getElementById("no").value; 자바스크립트 형식 // no위치의 값을 no에 저장
-					if (no==null || no=="") {
+					if (no==null || no=="") {// 빈값 or 공백이면
 						alert("내용이 없습니다.");
-						$("#no").focus();// autofocus // no위치에 포커싱
+						$("#no").focus();// autofocus // no위치에 자동 포커싱 "여기 다시 써!"
 						return false;
 					}
 					let title = $("#title").val();// title위치의 값을 title에 저장
@@ -37,7 +37,7 @@
 					// 입력된 글 html로 등록
 					$("#tbody").append(htmlData);// append: html추가 // tbody위치에 html추가(append)
 					
-					// 입력된 글 삭제
+					// 인풋박스에 입력된 내용 삭제
 					$("#no").val(""); // no위치에 공백
 					$("#title").val(""); // title위치에 공백
 					$("#user").val(""); // user위치에 공백
@@ -63,7 +63,7 @@
 			<input type="text" id="title" name="title"><br>
 			<label>작성자</label>
 			<input type="text" id="user" name="user"><br>
-			<button type="button" id="writeBtn">글등록</button>
+			<button type="button" id="writeBtn">글등록</button><!-- 인풋박스 값들을 저장하고 -->
 		</from>
 		<br>
 		
@@ -78,13 +78,13 @@
 				<th>삭제여부</th>
 			</tr>
 			</thead>
-			<tbody id="tbody">
+			<tbody id="tbody"><!-- 인풋박스에 저장된 값들을 여기에 html로 넣기 -->
 			<tr>
-				<td id="t01">1</td>
+				<td id="t01">1</td><!-- "삭제가능"으로 바뀜 -->
 				<td>게시글</td>
 				<td>홍길동</td>
 				<td>2023-06-14</td>
-				<td id="dbtn">삭제</td>
+				<td id="dbtn">삭제</td><!-- 버튼을 누르면  -->
 			</tr>
 
 			</tbody>

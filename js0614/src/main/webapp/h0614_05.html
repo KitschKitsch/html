@@ -11,7 +11,7 @@
 			$(function(){// 제이쿼리문
 				$("#writeBtn").click(function(){// writeBtn 클릭하면
 					
-					let no;
+					let stuNo;
 					let name = $("#name").val()// name위치의 값을 name에 저장
 					let kor = Number($("#kor").val())// kor위치의 값을 kor에 숫자로 저장
 					let eng = Number($("#eng").val())// eng위치의 값을 eng에 숫자로 저장
@@ -19,43 +19,43 @@
 					let total = kor+eng+math;
 					let avg = (total/3.0).toFixed(2);
 					
-					if(temp==0){
-						no = count// count를 no에 저장
+					if(temp==0){// 0 신규성적등록이면
+						stuNo = count// count(학생수)를 stuNo에 저장
 						let htmlData = "";
-						htmlData+="<tr id='"+no+"'>"
-						htmlData+="<td>"+no+"</td>"
+						htmlData+="<tr id='"+stuNo+"'>"
+						htmlData+="<td>"+stuNo+"</td>"
 						htmlData+="<td>"+name+"</td>"
 						htmlData+="<td>"+kor+"</td>"
 						htmlData+="<td>"+eng+"</td>"
 						htmlData+="<td>"+math+"</td>"
 						htmlData+="<td>"+total+"</td>"
 						htmlData+="<td>"+avg+"</td>"
-						htmlData+="<td><button onclick='modifyBtn("+no+")'>수정</button>&nbsp";
-						htmlData+="<button onclick='deleteBtn("+no+")'>삭제</button></td>";
+						htmlData+="<td><button onclick='modifyBtn("+stuNo+")'>수정</button>&nbsp";
+						htmlData+="<button onclick='deleteBtn("+stuNo+")'>삭제</button></td>";
 						htmlData+="</tr>"
 						$("#tbody").append(htmlData);// tbody위치에 html 뒤로(아래에) 넣기
 						alert("학생성적을 추가했습니다.")
-					
-						count++;
-					} else {
-						no = $("#no").val()// count를 no에 저장
+						count++;// 학생수 1증가
+						
+					} else {// 1 성적수정이면
+						stuNo = $("#stuNo").val()// stuNo위치(인풋박스)의 값을 stuNo에 저장
 						let htmlData = "";
-						htmlData+="<td>"+no+"</td>"
+						htmlData+="<td>"+stuNo+"</td>"
 						htmlData+="<td>"+name+"</td>"
 						htmlData+="<td>"+kor+"</td>"
 						htmlData+="<td>"+eng+"</td>"
 						htmlData+="<td>"+math+"</td>"
 						htmlData+="<td>"+total+"</td>"
 						htmlData+="<td>"+avg+"</td>"
-						htmlData+="<td><button onclick='modifyBtn("+no+")'>수정</button>&nbsp";
-						htmlData+="<button onclick='deleteBtn("+no+")'>삭제</button></td>";
+						htmlData+="<td><button onclick='modifyBtn("+stuNo+")'>수정</button>&nbsp";
+						htmlData+="<button onclick='deleteBtn("+stuNo+")'>삭제</button></td>";
 						//$("#tbody").append(htmlData);// tbody위치에 html 뒤로(아래에) 넣기
 						//$("#tbody").prepend(htmlData);// tbody위치에 html 앞으로(위에) 넣기
-						$("#"+no).html(htmlData);// no위치에 입력한 html로 대체하기(삭제 후 추가)
+						$("#"+stuNo).html(htmlData);// stuNo위치에 입력한 html로 대체하기(삭제 후 추가)
 						alert("학생성적을 수정했습니다.")
 					}
 					
-				$("#no").val("");// no위치의 값(인풋박스)을 공백으로
+				$("#stuNo").val("");// stuNo위치의 값(인풋박스)을 공백으로
 				$("#name").val("");// name위치의 값을 공백으로
 				$("#kor").val("");// kor위치의 값을 공백으로
 				$("#eng").val("");// eng위치의 값을 공백으로
@@ -65,18 +65,18 @@
 				});
 			});
 			
-			// 삭제함수
-			function deleteBtn(no) {
+			// 삭제함수(일반 자바스크립트 함수)
+			function deleteBtn(stuNo) {
 				alert("학생성적을 제거")
-				$("#"+no).remove();// no위치의 값 삭제
+				$("#"+stuNo).remove();// stuNo위치의 값 삭제
 			}
 			
-			// 수정함수
-			function modifyBtn(no) {
+			// 수정함수(일반 자바스크립트 함수)
+			function modifyBtn(stuNo) {
 				temp = 1;// 등록은 0 수정은 1
 				alert("수정버튼 클릭")
-				let td = $("#"+no).children();// no위치의 하위자손을 td에 '배열'로 저장
-				$("#no").val(td.eq(0).text());
+				let td = $("#"+stuNo).children();// stuNo위치의 모든하위자손을 td에 '배열'로 저장
+				$("#stuNo").val(td.eq(0).text());
 				$("#name").val(td.eq(1).text());
 				$("#kor").val(td.eq(2).text());
 				$("#eng").val(td.eq(3).text());
@@ -96,7 +96,7 @@
 	<body>
 		<h2>학생성적등록</h2>
 		<form action="" name="frm" method="get">
-			<input type="hidden" id="no" name="no"><br>
+			<input type="hidden" id="stuNo" name="stuNo"><br><!-- 학생번호(stuNo)를 hidden으로 받음  -->
 			<label>이름</label>
 			<input type="text" id="name" name="name"><br>
 			<label>국어</label>

@@ -8,11 +8,11 @@
 			$(function(){// 제이쿼리문
 				let count=1;
 				$("#btn").click(function(){// btn위치 클릭하면
-					count++;
+					count++;// count 1증가
 					if (count==4) count=1;
-					$("#i01").attr("src","images/min"+count+".jpg");// i01 위치의 태그속성을 변경(attr)
+					$("#i01").attr("src","images/min"+count+".jpg");// i01 위치의 속성을 변경 : attr
 				});
-			});
+			});// 제이쿼리문
 		</script>
 		<style>
 			div{width: 300px; height: 300px; overflow: hidden;}
