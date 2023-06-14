@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">	
+		<title>Insert title here</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			let temp=0;// 등록은 0 수정은 1
+			let count=1;
+			
+			$(function(){// 제이쿼리문
+				$("#writeBtn").click(function(){// writeBtn 클릭하면
+					
+					let no;
+					let name = $("#name").val()// name위치의 값을 name에 저장
+					let kor = Number($("#kor").val())// kor위치의 값을 kor에 숫자로 저장
+					let eng = Number($("#eng").val())// eng위치의 값을 eng에 숫자로 저장
+					let math = Number($("#math").val());// math위치의 값을 math에 숫자로 저장
+					let total = kor+eng+math;
+					let avg = (total/3.0).toFixed(2);
+					
+					if(temp==0){
+						no = count// count를 no에 저장
+						let htmlData = "";
+						htmlData+="<tr id='"+no+"'>"
+						htmlData+="<td>"+no+"</td>"
+						htmlData+="<td>"+name+"</td>"
+						htmlData+="<td>"+kor+"</td>"
+						htmlData+="<td>"+eng+"</td>"
+						htmlData+="<td>"+math+"</td>"
+						htmlData+="<td>"+total+"</td>"
+						htmlData+="<td>"+avg+"</td>"
+						htmlData+="<td><button onclick='modifyBtn("+no+")'>수정</button>&nbsp";
+						htmlData+="<button onclick='deleteBtn("+no+")'>삭제</button></td>";
+						htmlData+="</tr>"
+						$("#tbody").append(htmlData);// tbody위치에 html 뒤로(아래에) 넣기
+						alert("학생성적을 추가했습니다.")
+					
+						count++;
+					} else {
+						no = $("#no").val()// count를 no에 저장
+						let htmlData = "";
+						htmlData+="<td>"+no+"</td>"
+						htmlData+="<td>"+name+"</td>"
+						htmlData+="<td>"+kor+"</td>"
+						htmlData+="<td>"+eng+"</td>"
+						htmlData+="<td>"+math+"</td>"
+						htmlData+="<td>"+total+"</td>"
+						htmlData+="<td>"+avg+"</td>"
+						htmlData+="<td><button onclick='modifyBtn("+no+")'>수정</button>&nbsp";
+						htmlData+="<button onclick='deleteBtn("+no+")'>삭제</button></td>";
+						//$("#tbody").append(htmlData);// tbody위치에 html 뒤로(아래에) 넣기
+						//$("#tbody").prepend(htmlData);// tbody위치에 html 앞으로(위에) 넣기
+						$("#"+no).html(htmlData);// no위치에 입력한 html로 대체하기(삭제 후 추가)
+						alert("학생성적을 수정했습니다.")
+					}
+					
+				$("#no").val("");// no위치의 값(인풋박스)을 공백으로
+				$("#name").val("");// name위치의 값을 공백으로
+				$("#kor").val("");// kor위치의 값을 공백으로
+				$("#eng").val("");// eng위치의 값을 공백으로
+				$("#math").val("");// math위치의 값을 공백으로
+				
+				temp = 0;// temp 초기화
+				});
+			});
+			
+			// 삭제함수
+			function deleteBtn(no) {
+				alert("학생성적을 제거")
+				$("#"+no).remove();// no위치의 값 삭제
+			}
+			
+			// 수정함수
+			function modifyBtn(no) {
+				temp = 1;// 등록은 0 수정은 1
+				alert("수정버튼 클릭")
+				let td = $("#"+no).children();// no위치의 하위자손을 td에 '배열'로 저장
+				$("#no").val(td.eq(0).text());
+				$("#name").val(td.eq(1).text());
+				$("#kor").val(td.eq(2).text());
+				$("#eng").val(td.eq(3).text());
+				$("#math").val(td.eq(4).text());
+			}
+		</script>
+		<style>
+			* {padding: 0; margin: 0;}
+			h2{width: 800px; text-align: center; margin: 0 auto;}
+			form{width: 800px; margin: 0 auto;}
+			table{width: 800px; margin: 30px auto; text-align: center;}
+			table,th,td{border: 1px solid black; border-collapse: collapse;}
+			th{height: 40px; background: #efefef;}
+			td{height: 35px; width: 100px;}
+		</style>
+	</head>
+	<body>
+		<h2>학생성적등록</h2>
+		<form action="" name="frm" method="get">
+			<input type="hidden" id="no" name="no"><br>
+			<label>이름</label>
+			<input type="text" id="name" name="name"><br>
+			<label>국어</label>
+			<input type="text" id="kor" name="kor"><br>
+			<label>영어</label>
+			<input type="text" id="eng" name="eng"><br>
+			<label>수학</label>
+			<input type="text" id="math" name="math"><br>
+			<button type="button" id="writeBtn">성적등록</button>
+		</form>
+		<br>
+		
+		<h2>학생성적관리시스템</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>이름</th>
+					<th>국어</th>
+					<th>영어</th>
+					<th>수학</th>
+					<th>합계</th>
+					<th>평균</th>
+					<th>삭제여부</th>
+				</tr>
+			</thead>
+			<tbody id="tbody">
+			<!-- 	<tr id="1">
+					<td>1</td>
+					<td>홍길동</td>
+					<td>100</td>
+					<td>100</td>
+					<td>100</td>
+					<td>300</td>
+					<td>100.00</td>
+					<td>
+						<button onclick="modifyBtn(1)">수정</button>
+						<button onclick="deleteBtn(1)">삭제</button>
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</body>
+</html>

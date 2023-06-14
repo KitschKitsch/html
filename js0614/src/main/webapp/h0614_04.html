@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">	
+		<title>Insert title here</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			$(function(){// 제이쿼리문
+				$("#dbtn").click(function(){// dbtn위치 클릭하면
+					alert("삭제");
+					//$("#t01").text("삭제가능"); // 글자 넣을때
+					$("#t01").html("<td style='color:red; font-weight:600;'>삭제가능</td>"); // t01위치에 html 넣기
+					//console.log($("#dbtn").prevAll()[3]);
+				});// dbtn
+				
+				
+				$("#writeBtn").click(function(){// writeBtn위치 누르면
+					let no = $("#no").val(); // = document.getElementById("no").value; 자바스크립트 형식 // no위치의 값을 no에 저장
+					if (no==null || no=="") {
+						alert("내용이 없습니다.");
+						$("#no").focus();// autofocus // no위치에 포커싱
+						return false;
+					}
+					let title = $("#title").val();// title위치의 값을 title에 저장
+					let user = $("#user").val();// user위치의 값을 user에 저장
+					console.log(no, title, user);
+					
+					let htmlData="";
+					htmlData+="<tr>";
+					htmlData+="<td>"+no+"</td>";
+					htmlData+="<td>"+title+"</td>";
+					htmlData+="<td>"+user+"</td>";
+					htmlData+="<td>2023-06-14</td>";
+					htmlData+="<td>삭제</td>";
+					htmlData+="</tr>";
+					
+					// 입력된 글 html로 등록
+					$("#tbody").append(htmlData);// append: html추가 // tbody위치에 html추가(append)
+					
+					// 입력된 글 삭제
+					$("#no").val(""); // no위치에 공백
+					$("#title").val(""); // title위치에 공백
+					$("#user").val(""); // user위치에 공백
+					
+				});// writeBtn
+			});
+		</script>
+		<style>
+			* {padding: 0; margin: 0;}
+			h2{width: 1000px; text-align: center;}
+			table{width: 1000px; margin: 30px auto; text-align: center;}
+			table,th,td{border: 1px solid black; border-collapse: collapse;}
+			th{height: 40px; background: #efefef;}
+			td{height: 35px; width: 200px;}
+		</style>
+	</head>
+	<body>
+		<h2>글쓰기</h2>
+		<from action="" name="frm" method="get">
+			<label>번호</label>
+			<input type="text" id="no" name="no"><br>
+			<label>제목</label>
+			<input type="text" id="title" name="title"><br>
+			<label>작성자</label>
+			<input type="text" id="user" name="user"><br>
+			<button type="button" id="writeBtn">글등록</button>
+		</from>
+		<br>
+		
+		<h2>자유게시판</h2>
+		<table>
+			<thead>
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>작성일</th>
+				<th>삭제여부</th>
+			</tr>
+			</thead>
+			<tbody id="tbody">
+			<tr>
+				<td id="t01">1</td>
+				<td>게시글</td>
+				<td>홍길동</td>
+				<td>2023-06-14</td>
+				<td id="dbtn">삭제</td>
+			</tr>
+
+			</tbody>
+		</table>
+	</body>
+</html>
