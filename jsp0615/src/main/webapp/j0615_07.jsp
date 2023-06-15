@@ -4,11 +4,11 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>다른 주소로 보내기(sendRedirect)</title>
 	</head>
 	<body>
 		<h2>년도를 입력하세요.</h2>
-		<form action="confirm.jsp" method="get">
+		<form action="confirm.jsp" method="get"><!-- confirm 창으로 request 보냄  -->
 			<label>출생년도</label><br>
 			<input type="text" name="birth"><br>
 			<input type="submit" value="확인"><br>

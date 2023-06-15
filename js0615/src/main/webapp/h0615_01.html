@@ -11,7 +11,11 @@
 			div {width: 900px; height: 700px; margin: 20px auto; border: 2px solid black;}
 		</style>
 		<script>
-			function chartBtn(){
+			let arr1 = new Array();/* 배열선언 */ 
+			let arr2 = new Array(); 
+			let stuLabel = "학생성적표"
+			
+			function dataBtn(){
 				$.ajax({
 					url: "js/data.json",
 					data: "",
@@ -21,7 +25,7 @@
 						alert("성공");
 						for (let i=0; i<data.length; i++){
 							console.log("이름: ", data[i].name);
-							arr1.push(data[i].name);
+							arr1.push(data[i].name);// 배열에 요소 넣기 : push
 							console.log("합계: ", data[i].total);
 							arr2.push(data[i].total);
 						}
@@ -32,12 +36,11 @@
 						alert("실패")
 					}
 				});// ajax
+			}// dataBtn()
 			
-			// 그래프 그리기
 			/*------------------------------*/
-				let arr1 = new Array();/* 배열선언 */ 
-				let arr2 = new Array(); 
-				let stuLabel = "학생성적표"
+			// 그래프 그리기
+			function chartBtn(){
 				
 				$.ajax({
 					url: "js/data.json",
@@ -45,14 +48,6 @@
 					dataType: "json",
 					type: "get",
 					success: function(data){
-						for (let i=0; i<data.length; i++){
-							console.log("이름: ", data[i].name);
-							arr1.push(data[i].name);
-							console.log("합계: ", data[i].total);
-							arr2.push(data[i].total);
-						}
-						console.log(arr1);
-						console.log(arr2);
 						
 						 const ctx = document.getElementById('myChart');
 						  let arrX = arr1;
@@ -96,13 +91,12 @@
 						      }
 						    }
 						  });
-				/*------------------------------*/
 					},
 					error: function(){
 						alert("실패")
 					}
 				});// ajax
-			}// dataBtn()
+			}// chartBtn()
 				 
 		</script>
 	</head>

@@ -15,9 +15,9 @@
 		</style>
 	</head>
 	<body>
-		<%@include file="top.jsp" %>
+		<%@include file="top.jsp" %><!-- '지시자'로 다른페이지 삽입! -->
 		<div id="main">
 		</div>
-		<%@include file="footer.jsp" %>
+		<%@include file="footer.jsp" %><!-- '지시자'로 다른페이지 삽입! -->
 	</body>
 </html>
