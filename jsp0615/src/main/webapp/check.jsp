@@ -13,7 +13,7 @@
 			if(id.equals("aaa")) {
 				//response.sendRedirect("j0615_08.jsp");
 			} else {
-				response.sendRedirect("join03_success.jsp?userId="+id);// 데이터 보내는 방법! 파라미터 사용! 이제 이름은 userId
+				response.sendRedirect("join03_success.jsp?userId="+id+"&name="+"홍길동");// 데이터 보내는 방법! 파라미터 사용! 이제 이름은 userId
 			}
 	
 		%>
