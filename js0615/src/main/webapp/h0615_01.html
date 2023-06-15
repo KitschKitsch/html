@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>그래프</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!-- 그래프 그리는 자바스크립트 -->
+		<style>
+			* {padding: 0; margin: 0;}
+			button{width: 120px; height: 30px; text-align: center;}
+			div {width: 900px; height: 700px; margin: 20px auto; border: 2px solid black;}
+		</style>
+		<script>
+			function chartBtn(){
+				$.ajax({
+					url: "js/data.json",
+					data: "",
+					dataType: "json",
+					type: "get",
+					success: function(data){
+						alert("성공");
+						for (let i=0; i<data.length; i++){
+							console.log("이름: ", data[i].name);
+							arr1.push(data[i].name);
+							console.log("합계: ", data[i].total);
+							arr2.push(data[i].total);
+						}
+						console.log(arr1);
+						console.log(arr2);
+					},
+					error: function(){
+						alert("실패")
+					}
+				});// ajax
+			
+			// 그래프 그리기
+			/*------------------------------*/
+				let arr1 = new Array();/* 배열선언 */ 
+				let arr2 = new Array(); 
+				let stuLabel = "학생성적표"
+				
+				$.ajax({
+					url: "js/data.json",
+					data: "",
+					dataType: "json",
+					type: "get",
+					success: function(data){
+						for (let i=0; i<data.length; i++){
+							console.log("이름: ", data[i].name);
+							arr1.push(data[i].name);
+							console.log("합계: ", data[i].total);
+							arr2.push(data[i].total);
+						}
+						console.log(arr1);
+						console.log(arr2);
+						
+						 const ctx = document.getElementById('myChart');
+						  let arrX = arr1;
+						  let arrY = arr2;
+						  let label = stuLabel;
+						  
+						  new Chart(ctx, {
+						    type: 'bar',
+						    data: {
+						      labels: arrX, // X축 arr1 이름 배열
+						      datasets: [{
+						        label: stuLabel,
+						        data: arrY, // Y축 arr2 성적 배열
+						        borderWidth: 1,
+						        backgroundColor: [
+						            'rgba(255, 99, 132, 0.2)',
+						            'rgba(255, 159, 64, 0.2)',
+						            'rgba(255, 205, 86, 0.2)',
+						            'rgba(75, 192, 192, 0.2)',
+						            'rgba(54, 162, 235, 0.2)',
+						            'rgba(153, 102, 255, 0.2)',
+						            'rgba(201, 203, 207, 0.2)'
+						          ],
+						          borderColor: [
+						            'rgb(255, 99, 132)',
+						            'rgb(255, 159, 64)',
+						            'rgb(255, 205, 86)',
+						            'rgb(75, 192, 192)',
+						            'rgb(54, 162, 235)',
+						            'rgb(153, 102, 255)',
+						            'rgb(201, 203, 207)'
+						          ]
+						        
+						      }]
+						    },
+						    options: {
+						      scales: {
+						        y: {
+						          beginAtZero: true
+						        }
+						      }
+						    }
+						  });
+				/*------------------------------*/
+					},
+					error: function(){
+						alert("실패")
+					}
+				});// ajax
+			}// dataBtn()
+				 
+		</script>
+	</head>
+	<body>
+		<button onclick="dataBtn()">데이터 가져오기</button>
+		<button onclick="chartBtn()">그래프 그리기</button>
+		<br>
+		<br>
+		
+		<div>
+ 			 <canvas id="myChart"></canvas>
+		</div>
+		
+	</body>
+</html>

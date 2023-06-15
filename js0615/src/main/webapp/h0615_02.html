@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>그래프 그리기</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<style>
+			* {padding: 0; margin: 0;}
+			button{width: 120px; height: 30px; text-align: center;}
+			div {width: 900px; height: 700px; margin: 20px auto; border: 2px solid black;}
+		</style>
+		<script>
+			function gBtn(){
+				$.ajax({
+					url: "js/data.json",
+					data: "",
+					dataType: "json",
+					type: "get",
+					success: function(data){
+						// 데이터 가져오기 스크립트
+						let arrX = new Array();
+						let arrY = new Array();
+						let title = "학생성적표";
+						
+						for (let i=0; i<data.length; i++) {
+							arrX.push(data[i].name);
+							arrY.push(data[i].total);
+						}
+						
+						console.log(arrX);
+						console.log(arrY);
+						
+						
+						// 그래프 그리기 스크립트
+					  alert("그래프 그리기");
+					  const ctx = document.getElementById('myChart');
+		
+					  new Chart(ctx, {
+					    type: 'bar',
+					    data: {
+					      labels: arrX,
+					      datasets: [{
+					        label: "학생성적표",
+					        data: arrY,
+					        borderWidth: 1
+					      }]
+					    },
+					    options: {
+					      scales: {
+					        y: {
+					          beginAtZero: true
+					        }
+					      }
+					    }
+					  });// 그래프 그리기 스크립트
+							
+					},
+					error: function(){
+						alert("실패");
+					}
+				});// ajax
+				
+				
+				
+				
+			}// gBtn()
+		</script>
+	</head>
+	<body>
+		<button onclick="gBtn()">그래프 그리기</button>
+		<div>
+  			<canvas id="myChart"></canvas>
+		</div>
+	</body>
+</html>
