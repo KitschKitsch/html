@@ -49,12 +49,18 @@
 			<div id="join_success_div">
 				<p>
 					감사합니다.
-					<strong>회원가입이 완료되었습니다.</strong>
+					<strong>님! 회원가입이 완료되었습니다.</strong>
 					<strong>가입한 ID: 
 						<% String userId = request.getParameter("userId"); 
 							out.println(userId);
 						%>
 					</strong>
+					<strong>이름: 
+						<% String name = request.getParameter("name"); 
+							out.println(name);
+						%>
+					</strong>
+						   
 					
 				</p>
 			</div>	

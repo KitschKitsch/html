@@ -9,13 +9,13 @@
 	<body>
 		<% 
 			String id = request.getParameter("id");
+			String name = request.getParameter("name");
 			
-			if(id.equals("aaa")) {
+			if(id.equals("aaa")) {// "aaa" 이미 존재하면
 				response.sendRedirect("j0615_08.jsp");// 아이디가 같다면 다시 돌아가! 안대! 못바꿔줘!
 			} else {
-				response.sendRedirect("join03_success.jsp?userId="+id+"&name="+"홍길동");// 데이터 보내는 방법! 파라미터 사용!
+				response.sendRedirect("join03_success.jsp?userId="+id+"&name="+name);// 데이터 보내는 두번째 방법! 파라미터에 실어보내기!
 			}
-	
 		%>
 	</body>
 </html>
