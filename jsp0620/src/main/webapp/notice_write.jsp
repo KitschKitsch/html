@@ -13,7 +13,7 @@
 
 <body>
   <header>
-  	<% if (session.getAttribute("sessionId")==null) { %>
+  	<% if (session.getAttribute("sessionId")==null) { %><!-- 세션ID 없으면 -->
 		<script>alert("먼저 로그인을 해주세요!"); location.href="login.jsp";</script>
 	<% } %>
     <ul>
@@ -53,7 +53,7 @@
     <h1>관리자 글쓰기</h1>
     <hr>
 
-    <form action="doWrite.jsp" name="write" method="post" enctype="multipart/form-data">
+    <form action="doWrite.jsp" name="write" method="post" enctype="multipart/form-data"><!-- 파일업로드도 가능 -->
       <table>
         <colgroup>
           <col width="15%">

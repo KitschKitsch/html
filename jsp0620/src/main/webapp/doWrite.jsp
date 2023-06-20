@@ -13,8 +13,8 @@
 	<body>
 		<%
 			String uploadPath = "C:/upload"; // upload 폴더에
-			int size = 10*1024*1024;// 10MB
-			
+			int size = 10*1024*1024;// 10MB로 저장
+
 			MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8", new DefaultFileRenamePolicy());
 			
 			String userId = (String) session.getAttribute("sessionId");
@@ -23,6 +23,7 @@
 			String userBfile = multi.getFilesystemName("bfile");// 저장되는 이름
 			
 			BoardDao bdao = new BoardDao();
+			// 게시글 작성 메소드 호출
 			int result = bdao.insertOne(userId, userBtitle, userBcontent, userBfile);
 		%>
 		<script>

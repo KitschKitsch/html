@@ -42,16 +42,16 @@ public class BoardDao {
 			
 			
 	// 게시글 전체 조회 메소드(어레이리스트) --------------------------------------------------//
-	public ArrayList<Board> selectAll() {
+	public ArrayList<Board> selectAll() {// '여러개'는 '어레이리스트'로 받기
 		ArrayList<Board> list = new ArrayList<>();
 		try {
-			conn = getConnection();
+			conn = getConnection();// DB연결
 			query = "SELECT * FROM BOARD";
-			pstmt = conn.prepareStatement(query);
-			rs = pstmt.executeQuery();
+			pstmt = conn.prepareStatement(query);// 쿼리문 임시저장
+			rs = pstmt.executeQuery();// 쿼리문 실행, 결과
 			
-			while (rs.next()) {
-				bno = rs.getInt("BNO");
+			while (rs.next()) {// 다음 요소가 있을 때까지 반복
+				bno = rs.getInt("BNO");// 컬럼에서 가져오기
 				bhit = rs.getInt("BHIT");
 				bgroup = rs.getInt("BGROUP");
 				bstep = rs.getInt("BSTEP");
@@ -80,14 +80,14 @@ public class BoardDao {
 	
 	
 	// 게시글 1개 조회 메소드(객체) --------------------------------------------------//
-	public Board selectOne(int userBno) {
+	public Board selectOne(int userBno) {// '1개'는 '객체'로 받기
 		
 		try {
-			conn = getConnection();
+			conn = getConnection();// DB연결
 			query = "SELECT * FROM BOARD WHERE BNO=?";
-			pstmt = conn.prepareStatement(query);
+			pstmt = conn.prepareStatement(query);// 쿼리문 임시저장
 			pstmt.setInt(1, userBno);
-			rs = pstmt.executeQuery();
+			rs = pstmt.executeQuery();// 쿼리 실행,결과
 			
 			while (rs.next()) {
 				bno = rs.getInt("BNO");
@@ -118,7 +118,7 @@ public class BoardDao {
 	
 	
 	
-	// 게시글 저장 메소드--------------------------------------------------//
+	// 게시글 작성 메소드--------------------------------------------------//
 	public int insertOne(String userId, String userBtitle, String userBcontent, String userBfile) {
 		
 		try {

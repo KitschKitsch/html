@@ -52,9 +52,10 @@
   <section>
     <h1>NOTICE</h1>
 	<%	
-		int userBno = Integer.parseInt(request.getParameter("bno"));
+		int userBno = Integer.parseInt(request.getParameter("bno"));// 파라미터 담아보낸 url에서 번호받기 
 		BoardDao bdao = new BoardDao();
-		Board board = bdao.selectOne(userBno);
+		// 게시글 조회 메소드 호출
+		Board board = bdao.selectOne(userBno);// 해당번호의 게시글
 	%>
     <table>
       <tr>

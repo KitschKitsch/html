@@ -160,7 +160,29 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="htmlSource" path="/htmlSource" reloadable="true" source="org.eclipse.jst.jee.server:htmlSource"/><Context docBase="shopMall" path="/shopMall" reloadable="true" source="org.eclipse.jst.jee.server:shopMall"/><Context docBase="html06" path="/html06" reloadable="true" source="org.eclipse.jst.jee.server:html06"/></Host>
+      <!-- url주소로 파일찾기 -->
+      <!-- url주소로 파일찾기 -->
+      <Context docBase="test0608" path="/test0608" reloadable="true" source="org.eclipse.jst.jee.server:test0608"/>
+      <Context docBase="js0615" path="/js0615" reloadable="true" source="org.eclipse.jst.jee.server:js0615"/>
+      <Context docBase="test0614" path="/test0614" reloadable="true" source="org.eclipse.jst.jee.server:test0614"/>
+      <Context docBase="js0612" path="/js0612" reloadable="true" source="org.eclipse.jst.jee.server:js0612"/>
+      <Context docBase="js0613" path="/js0613" reloadable="true" source="org.eclipse.jst.jee.server:js0613"/>
+      <Context docBase="js0614" path="/js0614" reloadable="true" source="org.eclipse.jst.jee.server:js0614"/>
+      <Context docBase="html0601" path="/html0601" reloadable="true" source="org.eclipse.jst.jee.server:html0601"/>
+      <Context docBase="html0612" path="/html0612" reloadable="true" source="org.eclipse.jst.jee.server:html0612"/>
+      <Context docBase="jsp0620" path="/jsp0620" reloadable="true" source="org.eclipse.jst.jee.server:jsp0620"/>
+      <Context docBase="jsp0615" path="/jsp0615" reloadable="true" source="org.eclipse.jst.jee.server:jsp0615"/>
+      <Context docBase="htmlSource" path="/htmlSource" reloadable="true" source="org.eclipse.jst.jee.server:htmlSource"/>
+      <Context docBase="jsp0616" path="/jsp0616" reloadable="true" source="org.eclipse.jst.jee.server:jsp0616"/>
+      <Context docBase="html0607" path="/html0607" reloadable="true" source="org.eclipse.jst.jee.server:html0607"/>
+      <Context docBase="jsp0619" path="/jsp0619" reloadable="true" source="org.eclipse.jst.jee.server:jsp0619"/>
+      <Context docBase="shopMall" path="/shopMall" reloadable="true" source="org.eclipse.jst.jee.server:shopMall"/>
+      <Context docBase="html0609" path="/html0609" reloadable="true" source="org.eclipse.jst.jee.server:html0609"/>
+      <Context docBase="test0612" path="/test0612" reloadable="true" source="org.eclipse.jst.jee.server:test0612"/>
+      <Context docBase="html0608" path="/html0608" reloadable="true" source="org.eclipse.jst.jee.server:html0608"/>
+      <Context docBase="html0602" path="/html0602" reloadable="true" source="org.eclipse.jst.jee.server:html0602"/>
+      <Context docBase="c:/upload" path="/jsp0620/upload" reloadable="true"></Context><!-- url주소로 파일찾기 -->
+      </Host>
     </Engine>
   </Service>
 </Server>
