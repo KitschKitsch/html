@@ -41,6 +41,7 @@
 				int bhit;
 				
 				BoardDao bdao = new BoardDao();
+				// 게시판 메소드 호출
 				ArrayList<Board> list = bdao.selectBoard(); 
 				
 				for (int i=0; i<list.size(); i++) {

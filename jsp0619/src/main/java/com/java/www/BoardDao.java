@@ -46,7 +46,9 @@ public class BoardDao {
 		return connection;
 	}
 	
-	// 게시판 목록 메소드
+	
+	
+	// 게시판 메소드--------------------------------------------------//
 		public ArrayList<Board> selectBoard() {
 			ArrayList<Board> list = new ArrayList<>();
 			try {
@@ -81,7 +83,6 @@ public class BoardDao {
 					if(conn!=null) conn.close();	
 				} catch (Exception e2) {e2.printStackTrace();}
 			}// finally
-			
 			return list;
 		}// selectBoard
 

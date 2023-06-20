@@ -163,7 +163,6 @@ public class MemberDao {
 				if(conn!=null) conn.close();	
 			} catch (Exception e2) {e2.printStackTrace();}
 		}// finally
-		
 		return member;
 	}// selectMemberOne
 	
@@ -181,7 +180,7 @@ public class MemberDao {
 	    	 pstmt.setString(4, member.getId());
 
 	    	 //성공-1, 실패-0
-	    	 result = pstmt.executeUpdate(); //executeUpdate()-insert,update,delete   executeQuery()-select
+	    	 result = pstmt.executeUpdate(); //executeUpdate()-INSERT,UPDATE,DELETE   executeQuery()-SELECT
 
 	    }catch(Exception e){
 	    	e.printStackTrace();
@@ -193,13 +192,4 @@ public class MemberDao {
 	    }
 		return result;
 	}//updateMember
-	
-	
-	
-
-	
-	
-	
-
-
 }
