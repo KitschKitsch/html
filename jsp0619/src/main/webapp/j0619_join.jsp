@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>회원가입</title>
+		<title>회원정보입력</title>
 	</head>
 	<body>
 		<h2>회원가입</h2>

@@ -15,7 +15,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>회원가입 완료</title>
+		<title>회원가입 확인</title>
 	</head>
 	<body>
 		<%	
@@ -29,7 +29,7 @@
 			// 객체선언
 			MemberDao mdao = new MemberDao();
 			
-			// 회원정보저장 메소드 호출 (참조변수명.메소드명)
+			// 회원정보입력 메소드 호출 (참조변수명.메소드명)
 			int result = mdao.insertMember(new Member(userId,userPw,name,phone));
 			
 		%>

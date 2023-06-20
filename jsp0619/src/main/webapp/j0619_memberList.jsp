@@ -3,12 +3,14 @@
 <%@page import="com.java.www.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <% if(session.getAttribute("sessionId")==null) {%><!-- 연결 안되어있으면! -->
 <script>
 	alert("먼저 로그인을 해주세요.");
 	location.href="j0619_login.jsp";
 </script>
 <% } %>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -28,6 +30,7 @@
 		<% 
 			String id,pw,name,phone;
 			MemberDao mdao = new MemberDao();
+			// 회원정보목록 메소드 호출
 			ArrayList<Member> list = mdao.selectMember();
 			
 			for(int i=0; i<list.size(); i++) {

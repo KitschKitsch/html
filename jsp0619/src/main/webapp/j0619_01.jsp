@@ -6,9 +6,9 @@
     pageEncoding="UTF-8"%>
     
 <%!// DB연결
-	Connection conn;// SQL Developer 오픈
-	PreparedStatement pstmt;// BDA 입력창
-	ResultSet rs;// 쿼리문에 따른 결과
+	Connection conn;// 데이터베이스 연결
+	PreparedStatement pstmt;// SQL문 실행
+	ResultSet rs;// 결과값
 	
 	// 컬럼 타입 선언
 	int empno, mgr, deptno;
@@ -42,24 +42,24 @@
 			
 		<%
 			try{
-				Class.forName("oracle.jdbc.driver.OracleDriver");// Developer 열기
-				conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "tiger"); // BDA 연결
+				Class.forName("oracle.jdbc.driver.OracleDriver");// 오라클 드라이버 로드
+				conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "tiger"); // 데이터베이스 연결
 				
 				// 쿼리문
 				query = "SELECT * FROM EMP";
 				
-				pstmt = conn.prepareStatement(query);// 연결한 BDA 입력창에 쿼리입력
-				rs = pstmt.executeQuery();// 결과창
+				pstmt = conn.prepareStatement(query);// SQL문 실행
+				rs = pstmt.executeQuery();// 결과값
 				
 				while (rs.next()) { // 다음 데이터 있을 때까지
-					empno = rs.getInt("empno");
-					ename = rs.getString("ename");
-					job = rs.getString("job");
-					mgr = rs.getInt("mgr");
-					hiredate = rs.getString("hiredate");
-					sal = rs.getDouble("sal");
-					comm = rs.getDouble("comm");
-					deptno = rs.getInt("deptno");
+					empno = rs.getInt("EMPNO");
+					ename = rs.getString("ENAME");
+					job = rs.getString("JOB");
+					mgr = rs.getInt("MGR");
+					hiredate = rs.getString("HIREDATE");
+					sal = rs.getDouble("SAL");
+					comm = rs.getDouble("COMM");
+					deptno = rs.getInt("DEPTNO");
 						
 					/* out.print(" empno:" +empno+
 							  " ename:"	+ename+

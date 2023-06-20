@@ -10,16 +10,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>회원가입 완료</title>
+		<title>회원정보수정 완료</title>
 	</head>
 	<body>
 		<%	
-			request.setCharacterEncoding("utf-8");
+			request.setCharacterEncoding("utf-8");// post 방식
 		
 			String id = request.getParameter("id");
 			String pw = request.getParameter("pw");
@@ -29,10 +28,10 @@
 			// 객체선언
 			MemberDao mdao = new MemberDao();
 			
-			// 회원정보저장 메소드 호출 (참조변수명.메소드명)
+			// 회원정보수정 메소드 호출 (참조변수명.메소드명)
 			int result = mdao.updateMember(new Member(id,pw,name,phone));
-			session.removeAttribute("sessionName");
-			session.setAttribute("sessionName", name);
+			session.removeAttribute("sessionName");// 세션 제거
+			session.setAttribute("sessionName", name);// 세션 저장
 		%>
 		
 		<script>

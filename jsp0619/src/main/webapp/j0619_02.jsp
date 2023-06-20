@@ -10,8 +10,8 @@
     
 <%!// DB연결
 
-	Context context = null;
-	DataSource dataSource = null;
+	Context context = null;// 서버context.xml 파일에서 객체 받아오기
+	DataSource dataSource = null;// context.xml 파일의 DataSource (커넥션 풀)
 	
 	Connection conn;// SQL Developer 오픈
 	PreparedStatement pstmt;// BDA 입력창

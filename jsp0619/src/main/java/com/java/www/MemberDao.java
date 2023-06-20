@@ -38,8 +38,36 @@ public class MemberDao {
 	
 	
 	
+	// 회원정보입력 메소드--------------------------------------------------//
+	public int insertMember(Member member) {
+		try {
+	    	conn = getConnection();
+	    	
+	    	query = "INSERT INTO MEMBER VALUES (?,?,?,?)";
+	    	pstmt = conn.prepareStatement(query);// 쿼리문 저장
+	    	
+	    	pstmt.setString(1, member.getId());
+	    	pstmt.setString(2, member.getPw());
+	    	pstmt.setString(3, member.getName());
+	    	pstmt.setString(4, member.getPhone());
+	    	
+	    	// 성공: 1, 실패: 0
+	    	result = pstmt.executeUpdate();//쿼리문 입력 -insert, update, delete  executeQuery()-select
+	    	
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt!=null) pstmt.close();	
+				if(conn!=null) conn.close();	
+			} catch (Exception e2) {e2.printStackTrace();}
+		}// finally
+		return result;
+	}// insertMember
 	
-	// 로그인 확인 메소드(성공:1 실패:0)
+	
+	
+	// 로그인 확인 메소드--------------------------------------------------//
 	public Member selectLogin(String userId, String userPw) {
 		System.out.println("userId: " + userId);
 		Member member = null;
@@ -47,11 +75,11 @@ public class MemberDao {
 			conn = getConnection();
 			
 	    	query = "SELECT * FROM MEMBER WHERE ID=? AND PW=?";
-	    	pstmt = conn.prepareStatement(query);// 쿼리문 저장
+	    	pstmt = conn.prepareStatement(query);// 쿼리문 (임시저장) 
 	    	pstmt.setString(1, userId);
 	    	pstmt.setString(2, userPw);
 	    	
-	    	rs = pstmt.executeQuery();
+	    	rs = pstmt.executeQuery();// 쿼리문 실행, 결과
 	    	
 	    	while (rs.next()) {
 	    		id = rs.getString("id");
@@ -70,14 +98,44 @@ public class MemberDao {
 				if(conn!=null) conn.close();	
 			} catch (Exception e2) {e2.printStackTrace();}
 		}// finally
-		
 		return member;
-		
 	}// selectLogin
 	
 	
 	
-	// 회원정보검색 메소드
+	// 회원정보목록 메소드--------------------------------------------------//
+	public ArrayList<Member> selectMember() {
+		ArrayList<Member> list = new ArrayList<>();
+		try {
+			conn = getConnection();
+			
+	    	query = "SELECT * FROM MEMBER";
+	    	pstmt = conn.prepareStatement(query);// 쿼리문 저장
+	    	rs = pstmt.executeQuery();// 쿼리문 실행, 결과
+	    	
+	    	while (rs.next()) {
+	    		id = rs.getString("id");// 컬럼명
+	    		pw = rs.getString("pw");
+	    		name = rs.getString("name");
+	    		phone = rs.getString("phone");
+	    		list.add(new Member(id,pw,name,phone));
+	    	}
+	    	
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+				if(pstmt!=null) pstmt.close();	
+				if(conn!=null) conn.close();	
+			} catch (Exception e2) {e2.printStackTrace();}
+		}// finally
+		return list;
+	}// selectMember
+	
+	
+	
+	// 회원정보검색 메소드--------------------------------------------------//
 	public Member selectMemberOne(String sessionId) {
 		Member member = null;
 		try {
@@ -110,9 +168,8 @@ public class MemberDao {
 	}// selectMemberOne
 	
 	
-	
-	
-	//회원정보수정 메소드
+		
+	//회원정보수정 메소드--------------------------------------------------//
 	public int updateMember(Member member) {
 		try{
 	    	 conn = getConnection();
@@ -139,65 +196,10 @@ public class MemberDao {
 	
 	
 	
-	// 회원정보목록 메소드
-	public ArrayList<Member> selectMember() {
-		ArrayList<Member> list = new ArrayList<>();
-		try {
-			conn = getConnection();
-			
-	    	query = "SELECT * FROM MEMBER";
-	    	pstmt = conn.prepareStatement(query);// 쿼리문 저장
-	    	rs = pstmt.executeQuery();
-	    	
-	    	while (rs.next()) {
-	    		id = rs.getString("id");
-	    		pw = rs.getString("pw");
-	    		name = rs.getString("name");
-	    		phone = rs.getString("phone");
-	    		list.add(new Member(id,pw,name,phone));
-	    	}
-	    	
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if(rs!=null) rs.close();
-				if(pstmt!=null) pstmt.close();	
-				if(conn!=null) conn.close();	
-			} catch (Exception e2) {e2.printStackTrace();}
-		}// finally
-		
-		return list;
-	}// selectMember
+
 	
 	
 	
-	// 회원정보입력 메소드
-	public int insertMember(Member member) {
-		try {
-	    	conn = getConnection();
-	    	
-	    	query = "INSERT INTO MEMBER VALUES (?,?,?,?)";
-	    	pstmt = conn.prepareStatement(query);// 쿼리문 저장
-	    	
-	    	pstmt.setString(1, member.getId());
-	    	pstmt.setString(2, member.getPw());
-	    	pstmt.setString(3, member.getName());
-	    	pstmt.setString(4, member.getPhone());
-	    	
-	    	// 성공: 1, 실패: 0
-	    	result = pstmt.executeUpdate();//쿼리문 입력 -insert, update, delete  executeQuery()-select
-	    	
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if(pstmt!=null) pstmt.close();	
-				if(conn!=null) conn.close();	
-			} catch (Exception e2) {e2.printStackTrace();}
-		}// finally
-		
-		return result;
-	}// insertMember
+
 
 }

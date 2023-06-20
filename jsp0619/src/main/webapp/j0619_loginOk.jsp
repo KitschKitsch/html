@@ -16,11 +16,12 @@
 			String userPw = request.getParameter("pw");
 			
 			MemberDao mdao = new MemberDao();
-			Member mem = mdao.selectLogin(userId, userPw);
+			// 로그인 확인 메소드 호출
+			Member member = mdao.selectLogin(userId, userPw);
 			
-			if(mem!=null) {
-				session.setAttribute("sessionId", mem.getId());
-				session.setAttribute("sessionName", mem.getName());
+			if(member!=null) {
+				session.setAttribute("sessionId", member.getId());
+				session.setAttribute("sessionName", member.getName());
 		%>
 			<script>
 				alert("로그인 되었습니다.");
