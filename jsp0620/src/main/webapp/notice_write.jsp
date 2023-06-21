@@ -17,9 +17,14 @@
 		<script>alert("먼저 로그인을 해주세요!"); location.href="login.jsp";</script>
 	<% } %>
     <ul>
-      <li>회원가입</li> <span>|</span>
-      <li>로그인</li> <span>|</span>
-      <li>고객행복센터</li> <span>|</span>
+	 	 <% if (session.getAttribute("sessionId")==null) { %><!-- 세션에 ID 없으면  -->
+		<li>회원가입</li>
+		<li><a href="login.jsp">로그인</a></li>
+		<% } else { %>
+		<li><%= (String) session.getAttribute("sessionName") %> 님 </li>
+		<li><a href="logout.jsp">로그아웃</a></li>
+		<% } %>
+		<li><a href="notice_list.jsp">고객행복센터</a></li>
       <li>배송지역검색</li> <span>|</span>
       <li>기프트카드 등록</li>
     </ul>
