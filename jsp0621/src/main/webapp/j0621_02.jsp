@@ -6,17 +6,17 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>DAO -> RequestPage2 -> j0621_02</title>
 	</head>
 	<body>
-		<c:set var="varName" value="홍길동" /><!-- 변수할당 -->
+		<c:set var="varName" value="홍길동" /><!-- set 변수할당 -->
 		<% String name="이순신"; %>
-		<h3>이름: <c:out value="${varName}" /></h3><!-- 변수출력 -->
+		<h3>이름: <c:out value="${varName}" /></h3><!-- out 변수출력 -->
 		<h3>이름: ${varName} </h3><!-- 변수출력 -->
 		<h3>스크립트릿 이름: ${name}</h3><!-- 스크립트릿과 EL태그 연동 X -->
 		
 		<hr>
-		<!-- 조건문 -->
+		<!-- if 조건문 -->
 		<c:if test="${varName == '홍길동'}">
 			<h2>정답입니다. 홍길동</h2>
 		</c:if>
@@ -34,14 +34,14 @@
 		<%}%>
 		
 		<hr>
-		<!-- 반복문 -->
-		<c:forEach var="i" begin="1" end="10" step="1"><!-- 0~10(포함)까지 1씩 증가  -->
+		<!-- forEach 반복문 -->
+		<c:forEach var="i" begin="0" end="10" step="1"><!-- 0~10(포함)까지 1씩 증가  -->
 			${i}<br>
 		</c:forEach>
 		
 		<hr>
 		<h3>board 객체(1개)</h3>
-		<h3>${board.bno}</h3>
+		<h3>${board.bno}</h3><!-- RequestPage2(서블릿)에서 받기 -->
 		<h3>${board.id}</h3>
 		<h3>${board.btitle}</h3>
 		

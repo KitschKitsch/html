@@ -19,16 +19,16 @@ public class RequestPage2 extends HttpServlet {
 		
 		// DAO 연결
 		BoardDao bdao = new BoardDao();// 객체선언 
-		Board board = bdao.selectOne(3);// 메소드 호출
-		ArrayList<Board> list = bdao.selectAll();// 메소드 호출
+		Board board = bdao.selectOne(3);// 메소드 호출(한개/객체)
+		ArrayList<Board> list = bdao.selectAll();// 메소드 호출(여러개/리스트)
 		
 		// request에 담기
 		request.setAttribute("board", board); // board:board
 		request.setAttribute("list", list);	// list:list
 		
 		// request 전송
-		RequestDispatcher rd = request.getRequestDispatcher("j0621_02.jsp");
-		rd.forward(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher("j0621_02.jsp");// 목적지
+		rd.forward(request, response);// 출발
 		
 	}
 

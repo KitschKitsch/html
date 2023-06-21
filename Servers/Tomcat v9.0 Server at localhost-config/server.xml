@@ -181,8 +181,8 @@
       <Context docBase="test0612" path="/test0612" reloadable="true" source="org.eclipse.jst.jee.server:test0612"/>
       <Context docBase="html0608" path="/html0608" reloadable="true" source="org.eclipse.jst.jee.server:html0608"/>
       <Context docBase="html0602" path="/html0602" reloadable="true" source="org.eclipse.jst.jee.server:html0602"/>
-      <Context docBase="c:/upload" path="/jsp0620/upload" reloadable="true"></Context><!-- url주소로 파일찾기 -->
-      </Host>
+      <Context docBase="c:/upload" path="/jsp0620/upload" reloadable="true"/><!-- url주소로 파일찾기 -->
+      <Context docBase="jsp0621" path="/jsp0621" reloadable="true" source="org.eclipse.jst.jee.server:jsp0621"/></Host>
     </Engine>
   </Service>
 </Server>

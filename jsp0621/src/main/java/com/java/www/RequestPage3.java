@@ -16,16 +16,16 @@ public class RequestPage3 extends HttpServlet {
 		System.out.println("doAction");
 		request.setCharacterEncoding("utf-8");
 		
-		// DAO 연결
-		MemberDao mdao = new MemberDao();
-		ArrayList<Member> list = mdao.selectAll();
+		// DAO에 연결(DB접근)
+		MemberDao mdao = new MemberDao();// 객체선언
+		ArrayList<Member> list = mdao.selectAll();// 메소드호출
 		
 		// request에 담기
 		request.setAttribute("list", list);
 		
 		// request 전송
-		RequestDispatcher rd = request.getRequestDispatcher("j0621_03.jsp");
-		rd.forward(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher("j0621_03.jsp");// 목적지
+		rd.forward(request, response);// 출발
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>do 서블릿</title>
 	</head>
 	<body>
 		<h2>메인페이지</h2>

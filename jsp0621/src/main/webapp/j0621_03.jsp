@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>DAO -> RequestPage3 -> j0621_03</title>
 	</head>
 	<body>
 		<c:forEach var="member" items="${list}">

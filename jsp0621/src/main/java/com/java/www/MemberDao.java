@@ -36,6 +36,7 @@ public class MemberDao {
 	
 	
 	
+	// 회원 정보 전체 조회 메소드--------------------------------------------------//
 	public ArrayList<Member> selectAll() {
 		ArrayList<Member> list = new ArrayList<>();
 		
@@ -65,10 +66,8 @@ public class MemberDao {
 				if(conn!=null) conn.close();
 			} catch (Exception e2) {e2.printStackTrace();}
 			}// finally
-		
-		
 		return list;
-	}
+	}// selectAll
 	
 	
 	
