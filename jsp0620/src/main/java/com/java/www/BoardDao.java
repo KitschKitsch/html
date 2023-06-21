@@ -132,7 +132,7 @@ public class BoardDao {
 			pstmt.setString(2, userBtitle);
 			pstmt.setString(3, userBcontent);
 			pstmt.setString(4, userBfile);
-			result = pstmt.executeUpdate();
+			result = pstmt.executeUpdate();// executeUpdate()는 0 or 1! 
 		
 		} catch (Exception e) {
 			e.printStackTrace();
