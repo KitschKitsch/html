@@ -28,12 +28,14 @@ public class FController extends HttpServlet {
 		String contextPath = request.getContextPath();// 프로젝트명   /jspMall
 		String fileName = uri.substring(contextPath.length());// 파일명   /login.do	
 		System.out.println("호출 파일: " + fileName);
+			
 		
-		// 링크연결
+		// 메인[View] -> [Controller -> 서비스(서블릿)] -> DAO 메소드[Model] -> [서비스(메소드 결과 request로) -> Controller] -> 페이지로 연결[View]
+		
 		if(fileName.equals("/list.do")) {
 			// board 테이블의 list -> request
 			bservice = new BListService();// 인터페이스의 참조변수로 자식객체선언(다형성)
-			bservice.execute(request, response);// 메소드 호출
+			bservice.execute(request, response);// 메소드 결과값(request)
 			page = "list.jsp";
 			
 		} else if (fileName.equals("/view.do")) {
