@@ -14,7 +14,7 @@
 	
 	<jsp:useBean id="student" class="com.java.www.Student"/><!-- 클래스에 있는 객체를 student로 선언 -->
 	<jsp:setProperty property="*" name="student" />
-<%-- 	<jsp:setProperty property="stuNo" name="student" value="1" />
+<%--<jsp:setProperty property="stuNo" name="student" value="1" />
 	<jsp:setProperty property="name" name="student" value="honggildong"/>
 	<jsp:setProperty property="kor" name="student" value="100"/>
 	<jsp:setProperty property="eng" name="student" value="100"/>

@@ -8,8 +8,8 @@
 	</head>
 	<body>
 		<% 
-			Cookie cookieId = new Cookie("cookieId","admin");// userId:admin 저장
-			Cookie cookieCheckbox = new Cookie("cookieCheckbox","1");// idCheckbox:1 저장
+			Cookie cookieId = new Cookie("cookieId","admin");// cookieId:admin 저장
+			Cookie cookieCheckbox = new Cookie("cookieCheckbox","1");// cookieCheckbox:1 저장
 			
 			cookieId.setMaxAge(60*60);// 60초*60 = 1시간
 			cookieCheckbox.setMaxAge(60*60);// 60초*60 = 1시간
