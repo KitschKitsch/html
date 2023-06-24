@@ -4,19 +4,22 @@
 		<meta charset="UTF-8">
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script>
-		//document.getElementById("h1").innerText = "뉴진스 - 민지"// id보다 위에 있으면 먼저 호출 안됨
-			function titleAdd() {
-				document.getElementById("h1").innerText = "뉴진스 - 민지(버튼 누르면 호출)"
-			}; 
-					
+			//document.getElementById("h1").innerText = "뉴진스 - 민지"// id보다 위에 있으면 먼저 호출 안됨
+			
 			// 제이쿼리 구문 읽기
 			$(document).ready(function(){
 			});
 			
 			// 제이쿼리 구문 읽기_간단ver.
-			$(function(){
+			$(function(){/* 자동함수! 바로 작동!  */
 				$("#h1").text("뉴진스 - 민지(들어가자마자 호출)");
 			});
+		
+			function titleAdd() {/* 수동함수! 눌러야 작동!  */
+				document.getElementById("h1").innerText = "뉴진스 - 민지(버튼 누르면 호출)"
+			}; 
+					
+			
 		</script>
 		<title>제이쿼리</title>
 		<style>
