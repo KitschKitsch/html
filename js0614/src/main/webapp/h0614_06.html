@@ -7,10 +7,8 @@
 		<script>
 			$(function(){// 제이쿼리문
 				$("#chBtn").click(function(){// chBtn위치 클릭하면
-					//alert("체크박스 개수: " + $("input").length);// 개수 : length
-					//alert("선택된 체크박스 개수: " + $("input[name='hobby']:checked").length);// 개수 : length
 					console.log("체크박스 개수: " + $("input").length);
-					console.log($("input[name='hobby']:checked"));
+					console.log("체크된 박스 개수: " + $("input[name='hobby']:checked").length);
 					// console.log($("input[name='hobby']:checked").eq(0).val());// 체크된 '배열'의 0번째 값
 					console.log(
 							$("input[name='hobby']:checked").each(function(){// '배열'을 반복 실행 : each문

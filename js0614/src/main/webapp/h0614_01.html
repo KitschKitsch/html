@@ -8,15 +8,17 @@
 			// 제이쿼리 구문 : 전체 읽고 아이디 찾아서 한번 더 읽음! 위치상관없다!!
 			$(function(){
 				let count = 1;
-				$(".btn").text("색상,두께 증가");// btn위치에 텍스트 넣기 "제이쿼리 함수호출" -> "색상,두께 증가"
+				
 				$(".btn").click(function(){// btn위치 클릭하면 함수실행
-							count += 1; // count++;
-							$("#d01").css({"background":"green","border-width":count});// css 한줄로 중괄호, 콜론
-						});
+					$(".btn").text("색상,두께 증가");// btn위치에 텍스트 넣기 "제이쿼리 함수호출" -> "색상,두께 증가"
+					count += 1; // count++;
+					$("#d01").css({"background":"green","border-width":count});// css 한줄로 중괄호, 콜론
+				});
+				
 				$(".btn2").click(function(){// btn2위치 클릭하면 함수실행
-							count -= 1; // count++;
-							$("#d01").css({"background":"yellow", "border-width":count});
-						});
+					count -= 1; // count++;
+					$("#d01").css({"background":"yellow", "border-width":count});
+				});
 			});// 제이쿼리 구문
 			
 			// 자바스크립트 함수
