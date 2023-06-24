@@ -8,9 +8,11 @@
 		<style>
 			* {padding: 0; margin: 0;}
 			#main{width: 100%; height: 400px; background: pink;}
-			#top{width: 100%; height: 80px; border: 1px solid black;}
+			
+			#top{width: 100%; height: 80px; border: 1px solid black;}/* top페이지의 div  */
 			nav{width: 80%; height: 78px; border: 1px solid black; margin: 0 auto; background: green;}
-			#footer{width: 100%; height: 80px; border: 1px solid black;}
+			
+			#footer{width: 100%; height: 80px; border: 1px solid black;}/* footer페이지의 div  */
 			footer{width: 80%; height: 78px; border: 1px solid black; margin: 0 auto; background: yellow;}
 		</style>
 	</head>

@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<h2>회원가입</h2>
-		<form action="TestServlet" name="frm" method="post"><!-- TestServlet으로 get방식으로 보내기~ -->
+		<form action="TestServlet" name="frm" method="post"><!-- TestServlet으로 post방식으로 보내기~ -->
 		<label>이름</label>
 		<input type="text" name="name"><br>
 		

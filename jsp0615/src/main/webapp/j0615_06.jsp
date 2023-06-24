@@ -8,14 +8,14 @@
 	</head>
 	<body>
 	  <%
+		// 얘네 3개 + getParameter, getParameterValues중요!
+	  	out.println("url : "+request.getRequestURL()+"<br>");// 전체주소
+	  	out.println("uri : "+request.getRequestURI()+"<br>");// 전체주소 앞부분 포트번호 제외
+	  	out.println("ip : "+request.getRemoteAddr()+"<br>");
+	  	
 	  	String uri = request.getRequestURI();
 	  	int cPathLength = request.getContextPath().length();
 		String fileName = uri.substring(cPathLength+1);
-	  	
-		// 얘네 3개 + getParameter, getParameterValues중요!
-	  	out.println("url : "+request.getRequestURI()+"<br>");// 전체주소
-	  	out.println("uri : "+request.getRequestURI()+"<br>");// 전체주소 앞부분 포트번호 제외
-	  	out.println("ip : "+request.getRemoteAddr()+"<br>");
 	  	
 	  	out.println("서버 : "+request.getServerName()+"<br>");
 	  	out.println("포트번호 : "+request.getServerPort()+"<br>");

@@ -51,12 +51,12 @@
 					감사합니다.
 					<strong>님! 회원가입이 완료되었습니다.</strong>
 					<strong>가입한 ID: 
-						<% String userId = request.getParameter("userId"); 
+						<% String userId = request.getParameter("userId"); // url의 파라미터값 받아오기
 							out.println(userId);
 						%>
 					</strong>
 					<strong>이름: 
-						<% String name = request.getParameter("name"); 
+						<% String name = request.getParameter("name"); // url의 파라미터값 받아오기
 							out.println(name);
 						%>
 					</strong>
