@@ -47,7 +47,7 @@
 				<td><%= phone %></td>
 			</tr>
 		
-		<%}%>	
+		<%}// for%>	
 		</table>	
 	</body>
 </html>

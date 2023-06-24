@@ -7,8 +7,8 @@
     
 <%!// DB연결
 	Connection conn;// 데이터베이스 연결
-	PreparedStatement pstmt;// SQL문 실행
-	ResultSet rs;// 결과값
+	PreparedStatement pstmt;// SQL문 저장
+	ResultSet rs;// 쿼리문 실행, 결과
 	
 	// 컬럼 타입 선언
 	int empno, mgr, deptno;
@@ -84,7 +84,7 @@
 					</tr>				
 					
 					<%
-				}
+				}// while
 			} catch(Exception e) {
 				e.printStackTrace();
 				

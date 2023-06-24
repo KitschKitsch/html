@@ -41,7 +41,7 @@ public class MemberDao {
 	// 회원정보입력 메소드--------------------------------------------------//
 	public int insertMember(Member member) {
 		try {
-	    	conn = getConnection();
+	    	conn = getConnection();// DB연결
 	    	
 	    	query = "INSERT INTO MEMBER VALUES (?,?,?,?)";
 	    	pstmt = conn.prepareStatement(query);// 쿼리문 저장
@@ -82,8 +82,8 @@ public class MemberDao {
 	    	rs = pstmt.executeQuery();// 쿼리문 실행, 결과
 	    	
 	    	while (rs.next()) {
-	    		id = rs.getString("id");
-	    		pw = rs.getString("pw");
+	    		id = rs.getString("ID");// DB컬럼이름(대소문자 구분X)
+	    		pw = rs.getString("PW");
 	    		name = rs.getString("name");
 	    		phone = rs.getString("phone");
 	    		member = new Member(id,pw,name,phone);

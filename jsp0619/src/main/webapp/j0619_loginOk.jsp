@@ -17,7 +17,7 @@
 			
 			MemberDao mdao = new MemberDao();
 			// 로그인 확인 메소드 호출
-			Member member = mdao.selectLogin(userId, userPw);
+			Member member = mdao.selectLogin(userId, userPw);// member 클래스 객체에 메소드 결과 담기
 			
 			if(member!=null) {
 				session.setAttribute("sessionId", member.getId());

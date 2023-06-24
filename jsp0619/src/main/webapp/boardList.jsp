@@ -48,15 +48,16 @@
 					Board b = list.get(i);
 					bno = b.getBno();
 					btitle = b.getBtitle();
+					id = b.getId();
 					bdate = b.getBdate();
 					bhit = b.getBhit();
 			%>
 			<tr>
-				<td>1</td>
-				<td>게시글 등록</td>
-				<td>홍길동</td>
-				<td>2023-06-19</td>
-				<td>100</td>
+				<td><%= bno %></td>
+				<td><%= btitle %></td>
+				<td><%= id %></td>
+				<td><%= bdate %></td>
+				<td><%= bhit %></td>
 			</tr>
 			<%}%>
 			

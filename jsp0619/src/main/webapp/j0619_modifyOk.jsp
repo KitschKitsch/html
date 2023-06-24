@@ -30,8 +30,8 @@
 			
 			// 회원정보수정 메소드 호출 (참조변수명.메소드명)
 			int result = mdao.updateMember(new Member(id,pw,name,phone));
-			session.removeAttribute("sessionName");// 세션 제거
-			session.setAttribute("sessionName", name);// 세션 저장
+			session.removeAttribute("sessionName");// 먼저 있던 세션 제거
+			session.setAttribute("sessionName", name);// 세션 재저장
 		%>
 		
 		<script>
