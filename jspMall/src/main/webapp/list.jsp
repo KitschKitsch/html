@@ -50,7 +50,7 @@
       </tr>
       
       <!-- 내용부분 -->
-     <c:forEach var="board" items="${list}">
+     <c:forEach var="board" items="${list}"> <!-- ${requestScope.list} -->
       <tr>
         <td><span class="table-notice">${board.bno}</span></td>
         <td class="table-title"><a href="view.do?bno=${board.bno}">${board.btitle}</a></td>

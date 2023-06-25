@@ -18,7 +18,7 @@ public class BListService implements BService {
 		ArrayList<Board> list = bdao.selectAll();// 메소드호출
 		
 		// request에 담기
-		request.setAttribute("list", list);
+		request.setAttribute("list", list);// list:list
 	}
 
 }
