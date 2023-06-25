@@ -10,8 +10,8 @@
 	</head>
 	<body>
 		<%
-			String userId = request.getParameter("id");// 인풋박스에서 받은 id
-			String userPw = request.getParameter("pw");// 인풋박스에서 받은 pw
+			String userId = request.getParameter("id");// 인풋박스(폼)에서 받은 id
+			String userPw = request.getParameter("pw");// 인풋박스(폼)에서 받은 pw
 			
 			// 객체선언
 			MemberDao mdao = new MemberDao();

@@ -12,7 +12,6 @@
 		<%	
 			// String uploadPath = request.getRealPath("fileFolder");// 저장경로(서버)
 			String uploadPath = "C:/upload";// 저장경로
-			
 			int size = 10*1024*1024; // 사이즈 10MB
 			
 			MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8", new DefaultFileRenamePolicy());
