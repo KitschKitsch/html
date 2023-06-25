@@ -60,7 +60,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector connectionTimeout="20000" maxParameterCount="1000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector URIEncoding="utf-8" connectionTimeout="20000" maxParameterCount="1000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -162,7 +162,7 @@
 
       <!-- url주소로 파일찾기 -->
       <!-- url주소로 파일찾기 -->
-      <Context docBase="jspMall" path="/jspMall" reloadable="true" source="org.eclipse.jst.jee.server:jspMall"/><Context docBase="test0608" path="/test0608" reloadable="true" source="org.eclipse.jst.jee.server:test0608"/><Context docBase="jsp0620" path="/jsp0620" reloadable="true" source="org.eclipse.jst.jee.server:jsp0620"/><Context docBase="jsp0621" path="/jsp0621" reloadable="true" source="org.eclipse.jst.jee.server:jsp0621"/><Context docBase="jsp0615" path="/jsp0615" reloadable="true" source="org.eclipse.jst.jee.server:jsp0615"/><Context docBase="test0614" path="/test0614" reloadable="true" source="org.eclipse.jst.jee.server:test0614"/><Context docBase="jsp0616" path="/jsp0616" reloadable="true" source="org.eclipse.jst.jee.server:jsp0616"/><Context docBase="jsp0619" path="/jsp0619" reloadable="true" source="org.eclipse.jst.jee.server:jsp0619"/><Context docBase="shopMall" path="/shopMall" reloadable="true" source="org.eclipse.jst.jee.server:shopMall"/><Context docBase="test0612" path="/test0612" reloadable="true" source="org.eclipse.jst.jee.server:test0612"/></Host>
+      <Context docBase="jspMall" path="/jspMall" reloadable="true" source="org.eclipse.jst.jee.server:jspMall"/></Host>
     </Engine>
   </Service>
 </Server>
