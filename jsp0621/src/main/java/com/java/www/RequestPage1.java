@@ -18,8 +18,8 @@ public class RequestPage1 extends HttpServlet {
 		
 		request.setCharacterEncoding("utf-8");
 		
-		request.setAttribute("id", "admin");// request: 크기, 종류에 상관없이 모두 보낼 수 있음!
-		request.setAttribute("pw", "1234");
+		request.setAttribute("id", "admin");// id:admin // request: 크기, 종류에 상관없이 모두 보낼 수 있음!
+		request.setAttribute("pw", "1234");// pw:1234
 		
 		// response.sendRedirect("j0621_01.jsp");// but, HTML은 페이지 바뀌면 모든 데이터 삭제함;;;
 		RequestDispatcher rd = request.getRequestDispatcher("j0621_01.jsp");// 목적지 설정

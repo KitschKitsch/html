@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><!-- for, if, switch 등을 쓸 수 있는 Core 라이브러리 with EL태그 -->
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %><!-- 포맷 바꿔주는 fmt 라이브러리(참고) -->
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -25,7 +26,6 @@
 			<h2>오답입니다. ${varName} 입니다.</h2>
 		</c:if>
 		
-		<hr>
 		<!-- 조건문(스크립트릿) -->
 		<% if(name.equals("홍길동")) {%>
 				<h2>정답입니다. 홍길동</h2>
@@ -46,7 +46,7 @@
 		<h3>${board.btitle}</h3>
 		
 		<hr>
-		<h3>board 객체(여러개)</h3>
+		<h3>board list(여러개)</h3>
 		<c:forEach var="b" items="${list}">
 			<h3>${b.bno}</h3>		
 			<h3>${b.id}</h3>		

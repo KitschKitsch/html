@@ -13,6 +13,8 @@
 		<h3><%= request.getAttribute("pw") %></h3>
 		<hr>
 		<h3>${id }</h3><!-- EL태그 admin -->
-		<h3>${requestScope.id }</h3><!-- admin  // form에서 넘어오는 param은 다써야함... -->
+		<h3>${requestScope.id }</h3><!-- admin  //  id가 request에만 있으면 생략가능!
+													세션에도 id가 있으면 앞에 내장객체명Scop0e. 붙여줘야함!
+													파라미터로 전달받은 값은 param. 써야함! -->
 	</body>
 </html>
